@@ -15,7 +15,7 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
          if ($this->getUser()) {
-             die(1);
+             return $this->redirect('admin');
          }
 
         // get the login error if there is one

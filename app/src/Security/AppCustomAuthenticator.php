@@ -96,7 +96,7 @@ class AppCustomAuthenticator extends AbstractFormLoginAuthenticator implements P
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse('api');
+        return new RedirectResponse('admin');
     }
 
     protected function getLoginUrl()
