@@ -25,10 +25,6 @@ security:
                     - lexik_jwt_authentication.jwt_token_authenticator
                     - App\Security\AppCustomAuthenticator
                 entry_point: lexik_jwt_authentication.jwt_token_authenticator
-            logout:
-                path: app_logout
-                # where to redirect after logout
-                # target: app_any_route
         main:
             anonymous: true
             json_login:
@@ -37,6 +33,13 @@ security:
                 password_path: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
+            guard:
+                authenticators:
+                    - App\Security\AppCustomAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                target: /login
 
     access_control:
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
@@ -44,5 +47,5 @@ security:
         - { path: ^/api/docs, roles: IS_AUTHENTICATED_ANONYMOUSLY } # Allows accessing the Swagger UI
         - { path: ^/api, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/authentication_token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: ROLE_USER }
         - { path: ^/, roles: IS_AUTHENTICATED_FULLY }
