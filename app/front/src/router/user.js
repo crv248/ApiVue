@@ -2,6 +2,7 @@ import UserList from '../components/user/List';
 import UserCreate from '../components/user/Create';
 import UserUpdate from '../components/user/Update';
 import UserShow from '../components/user/Show';
+import UserLogin from '../components/user/Login';
 
 const list = {
   label: 'UserList',
@@ -17,6 +18,10 @@ const update = {
 };
 const show = {
   label: 'UserShow',
+  icon: 'whatshot',
+};
+const login = {
+  label: 'UserLogin',
   icon: 'whatshot',
 };
 
@@ -37,6 +42,17 @@ export default [
       breadcrumb: [
         { ...list , to: { name: list['label'] } },
         create,
+      ],
+    },
+  },
+  {
+    name: create['label'],
+    path: '/users/login',
+    component: UserLogin,
+    meta: {
+      breadcrumb: [
+        { ...list , to: { name: list['label'] } },
+        login,
       ],
     },
   },

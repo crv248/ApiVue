@@ -16,6 +16,42 @@
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td>{{ $t('image') }}</td>
+            <td>
+            {{ formatDateTime(item['image'], 'long') }}            </td>
+
+          
+            <td>{{ $t('email') }}</td>
+            <td>
+            {{ formatDateTime(item['email'], 'long') }}            </td>
+
+          </tr>
+          
+          <tr>
+            <td>{{ $t('username') }}</td>
+            <td>
+            {{ formatDateTime(item['username'], 'long') }}            </td>
+
+          
+            <td>{{ $t('roles') }}</td>
+            <td>
+            {{ formatDateTime(item['roles'], 'long') }}            </td>
+
+          </tr>
+          
+          <tr>
+            <td>{{ $t('password') }}</td>
+            <td>
+            {{ formatDateTime(item['password'], 'long') }}            </td>
+
+          
+            <td>{{ $t('salt') }}</td>
+            <td>
+            {{ formatDateTime(item['salt'], 'long') }}            </td>
+
+          </tr>
+          
         </tbody>
       </q-markup-table>
     </div>
