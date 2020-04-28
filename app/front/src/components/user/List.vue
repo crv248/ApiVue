@@ -54,9 +54,6 @@ export default {
         { name: 'image', field: 'image', label: this.$t('image') },
         { name: 'email', field: 'email', label: this.$t('email') },
         { name: 'username', field: 'username', label: this.$t('username') },
-        { name: 'roles', field: 'roles', label: this.$t('roles') },
-        { name: 'password', field: 'password', label: this.$t('password') },
-        { name: 'salt', field: 'salt', label: this.$t('salt') },
       ],
     };
   },
